@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Parkour Queen YT – Bloxd.io Fun Facts</title>
+  <link rel="icon" href="https://i.postimg.cc/59LXfLMC/bloxd-io-logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* -------------------- RESET & BASE -------------------- */
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html, body { height:100%; overflow-x:hidden; font-family:'Poppins',sans-serif; }
+    body {
+      background: url('https://i.postimg.cc/LsgStrSb/Background.jpg') no-repeat center/cover fixed;
+      color:#FFF;
+      display:flex; flex-direction:column; justify-content:space-between;
+      animation: pageFade 0.8s ease-in;
+    }
+    @keyframes pageFade { from{opacity:0} to{opacity:1} }
+
+    /* -------------------- HEADER & SECTIONS -------------------- */
+    #home { text-align:center; padding:3rem 1rem 1rem; }
+    #home img { max-width:80%; filter:drop-shadow(0 0 20px #000); margin-bottom:2rem; }
+    .links { display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; }
+
+    /* Default neon pink buttons */
+    .links a[href*="youtube.com"],
+    .links a[href*="discord.com"] {
+      font-family:'Orbitron',sans-serif;
+      color:#FFF;
+      text-decoration:none;
+      padding:.8rem 1.6rem;
+      border:2px solid #ff69b4;
+      border-radius:30px;
+      background:#333;
+      transition:.3s;
+      text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
+    }
+
+    /* Hover effect */
+    .links a[href*="youtube.com"]:hover,
+    .links a[href*="discord.com"]:hover {
+      background:#ff69b4;
+      border-color:#ff69b4;
+      color:white;
+      box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
+    }
+
+    #texturepacks { text-align:center; padding:2rem 1rem; }
+    #texturepacks h2 { font-size:2.5rem; margin-bottom:1rem; text-shadow:2px 2px 10px #000; }
+    .texturepack-description {
+      max-width:600px; margin:0 auto 2rem; padding:1rem; border-radius:12px;
+      background:rgba(255,255,255,0.1); backdrop-filter:blur(5px);
+    }
+    .texturepack-list { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; }
+    .texturepack-item {
+      background:rgba(0,0,0,0.6); border-radius:16px; padding:1.5rem;
+      max-width:350px; text-align:center; backdrop-filter:blur(4px);
+      box-shadow:0 0 20px rgba(0,0,0,0.5); transition:transform .3s ease;
+    }
+    .texturepack-item:hover { transform:translateY(-10px); }
+    .texturepack-item img { width:60px; height:60px; margin-bottom:1rem; }
+    .texturepack-item h3 { margin-bottom:1rem; color:#0ff; font-size:1.3rem; }
+    .texturepack-item a {
+      display:inline-block; margin-top:.5rem; padding:.6rem 1.2rem;
+      background:#0ff; color:#000; border-radius:8px; font-weight:bold;
+      text-decoration:none; transition:.3s;
+    }
+    .texturepack-item a:hover { background:#f0f; color:#fff; transform:scale(1.05); }
+
+    /* -------------------- FOOTER -------------------- */
+    footer {
+      background:rgba(0,0,0,0.8); text-align:center; padding:1rem; font-size:.9rem;
+    }
+
+    /* -------------------- NEON FIRECRACKER CURSOR TRAIL -------------------- */
+    .particle {
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
+      z-index:1000;
+      animation:explode .6s ease-out forwards;
+    }
+    @keyframes explode {
+      0% { transform:scale(1); opacity:1; }
+      100% { transform:scale(2.5); opacity:0; }
+    }
+
+    /* Small credit text */
+    .credit {
+      position:fixed;
+      bottom:10px;
+      left:10px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Poppins', sans-serif;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="home">
+    <img src="https://i.postimg.cc/44SZVt3L/Title-website.png" alt="Parkour Queen Title">
+    <div class="links">
+      <a href="https://www.youtube.com/@Parkour_Queen_YT" target="_blank">YouTube</a>
+      <a href="https://discord.com/invite/KszxTXuuNU" target="_blank">Discord</a>
+    </div>
+  </section>
+
+  <section id="texturepacks">
+    <h2>Texture Packs</h2>
+    <p class="texturepack-description">
+      Browse and download our official texture pack made for Bloxd.io events and tournaments!
+    </p>
+    <div class="texturepack-list">
+      <div class="texturepack-item">
+        <img src="https://i.postimg.cc/59LXfLMC/bloxd-io-logo.png" alt="Texturepack Image">
+        <h3>Bloxd EVENTS Official T-Pack</h3>
+        <a href="https://raw.githubusercontent.com/ParkourQueenYT/Bloxd.io-texturepacks/main/Bloxd%20EVENTS%20Official%20T-Pack.zip" id="download-button" download>
+          Download Pack
+        </a>
+        <p id="download-count">Downloads: 6</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Parkour Queen YT. All rights reserved.
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "your-api-key",
+      authDomain: "your-project-id.firebaseapp.com",
+      databaseURL: "https://your-project-id.firebaseio.com",
+      projectId: "your-project-id",
+      storageBucket: "your-project-id.appspot.com",
+      messagingSenderId: "your-sender-id",
+      appId: "your-app-id",
+      measurementId: "your-measurement-id"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const downloadCountRef = firebase.database().ref('downloads/tpack');
+
+    document.getElementById('download-button').addEventListener('click', function() {
+      downloadCountRef.transaction(function(currentValue) {
+        return (currentValue || 0) + 1;
+      });
+    });
+
+    downloadCountRef.on('value', function(snapshot) {
+      const currentCount = snapshot.val();
+      document.getElementById('download-count').textContent = `Downloads: ${currentCount}`;
+    });
+  </script>
+
+  <!-- Small credit -->
+  <div class="credit">Made by Cube and Rohuu</div>
+
+</body>
+</html>
